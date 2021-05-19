@@ -36,9 +36,9 @@
                 <th th:text="${cityInfo.temp} + &#8457"></th>
             </tr>
         </table>
-        <p th:inline="text" th:text="${cityInfo.name}">
-            For a fabulous weekend get away for 2 to sign up here.</p>
-		<form method="post">
+        <p> For a fabulous weekend get away for 2 to 
+            <span th:text="${cityInfo.name}"></span> sign up here. </p>
+		<form th:action="@{/cities/reservation}" method="POST">
 		  <input type="hidden" id="city" name="city" th:value="${cityInfo.name}">
 		  <label for="email">Email: </label><br>
 		  <input type="email" id="email" name="email"><br>
